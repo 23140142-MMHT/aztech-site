@@ -47,24 +47,94 @@ export const ambassadors = {
   programs: ["FIRST Ambassadors", "FIRST Like a Girl", "FIRST Menstrual Equality"],
 } as const;
 
-/** Historia y trayectoria por temporadas FIRST. */
+/**
+ * Historia y trayectoria por temporadas FIRST.
+ * Cada temporada agrupa su imagen y los eventos/premios de esa campaña.
+ * - `award` presente = premio obtenido; sin `award` = participación.
+ * - `soon: true` = resultado por confirmarse ("Coming soon").
+ * - Coloca la imagen en public/seasons/<slug>.png.
+ */
+export type SeasonEvent = { name: string; award?: string; soon?: boolean };
+export type Season = {
+  label: string;
+  year: string;
+  image: string;
+  events: SeasonEvent[];
+};
+
 export const history = {
   blurb:
     "Aztech II surgió en 2019 dentro del programa FIRST Tech Challenge con la meta de formar jóvenes líderes capaces de transformar su entorno. Desde entonces operamos bajo una filosofía de crecimiento constante, colaboración y aprendizaje continuo.",
   seasons: [
-    "Ultimate Goal",
-    "Freight Frenzy",
-    "Power Play",
-    "Center Stage",
-    "Into the Deep",
-    "Decode (2026)",
-  ],
+    {
+      label: "Ultimate Goal",
+      year: "2020",
+      image: "/seasons/ultimate-goal.png",
+      events: [],
+    },
+    {
+      label: "Freight Frenzy",
+      year: "2021",
+      image: "/seasons/freight-frenzy.png",
+      events: [{ name: "Mexico Championship" }],
+    },
+    {
+      label: "Power Play",
+      year: "2022",
+      image: "/seasons/power-play.png",
+      events: [
+        {
+          name: "MX FTC POWER PLAY Regional Centro (Toluca)",
+          award: "Finalist Alliance · 2nd Team Selected",
+        },
+        {
+          name: "MX POWER PLAY Campeonato Nacional FTC México (CDMX)",
+          award: "Connect Award",
+        },
+      ],
+    },
+    {
+      label: "Center Stage",
+      year: "2023",
+      image: "/seasons/center-stage.png",
+      events: [
+        {
+          name: "MX TORNEO REGIONAL FTC FERRERÍA CDMX",
+          award: "Winning Alliance · 2nd Team Selected",
+        },
+        { name: "Mexico TORNEO NACIONAL FTC CDMX" },
+      ],
+    },
+    {
+      label: "Into the Deep",
+      year: "2024",
+      image: "/seasons/into-the-deep.png",
+      events: [
+        { name: "TORNEO REGIONAL FTC CDMX" },
+        { name: "TORNEO REGIONAL FTC TOLUCA" },
+      ],
+    },
+    {
+      label: "Decode",
+      year: "2025",
+      image: "/seasons/decode.png",
+      events: [
+        { name: "Torneo Regional Cuautitlán", award: "Think Award" },
+        { name: "Torneo Regional CDMX", award: "Inspire Award" },
+        { name: "Torneo Regional FTC Toluca", award: "Think Award" },
+        { name: "Mexico Championship" },
+        { name: "Canada Cup · Niagara Premier Event · Science Division", soon: true },
+        { name: "Canada Cup · Niagara Premier Event", soon: true },
+      ],
+    },
+  ] satisfies Season[],
 };
 
-/** Logros destacados. */
+/** Logros destacados (resumen rápido en badges). */
 export const achievements = [
   { name: "Inspire Award", note: "El máximo reconocimiento de FTC" },
   { name: "Think Award", note: "Obtenido en dos ocasiones" },
+  { name: "Connect Award", note: "Power Play · Nacional 2022" },
 ];
 
 /** Lo que nos distingue como equipo. */

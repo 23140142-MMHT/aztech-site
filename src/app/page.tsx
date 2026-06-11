@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Trajectory from "@/components/Trajectory";
 import {
   team,
   identity,
@@ -102,28 +103,15 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="card">
+            <div className="card overflow-visible">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-accent">
                 Nuestra trayectoria FIRST
               </h3>
-              <ol className="mt-4 space-y-3">
-                {history.seasons.map((s, i) => (
-                  <li key={s} className="flex items-center gap-3">
-                    <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-gradient-to-br from-primary to-accent text-xs font-bold text-white">
-                      {i + 1}
-                    </span>
-                    <span
-                      className={
-                        i === history.seasons.length - 1
-                          ? "font-semibold text-foreground"
-                          : "text-muted-foreground"
-                      }
-                    >
-                      {s}
-                    </span>
-                  </li>
-                ))}
-              </ol>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Pasa el cursor sobre cada temporada para ver su imagen, eventos
+                y premios.
+              </p>
+              <Trajectory seasons={history.seasons} />
             </div>
           </div>
         </div>
