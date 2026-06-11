@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ════════════════════════════════════════════════════════════════════════
+   Sitio Aztech · Dark-mode first · Paleta Aztech II (morados)
+   Para re-tematizar todo el sitio, edita SOLO las variables de :root.
+   ════════════════════════════════════════════════════════════════════════ */
+:root {
+  --background: 10 5 18; /* #0a0512 casi negro con tinte morado */
+  --surface: 22 10 38; /* #160a26 */
+  --surface-2: 32 16 58; /* #20103a */
+  --border: 46 26 77; /* #2e1a4d */
+  --foreground: 244 236 255; /* #f4ecff blanco lavanda */
+  --muted: 32 16 58; /* #20103a */
+  --muted-foreground: 185 163 214; /* #b9a3d6 lavanda apagado */
+  --primary: 143 0 255; /* #8f00ff */
+  --primary-foreground: 255 255 255;
+  --accent: 163 97 255; /* #a361ff */
+  --accent-foreground: 10 5 18;
+  --radius: 14px;
+  --font-heading: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image:
+      radial-gradient(60rem 40rem at 80% -10%, rgb(var(--primary) / 0.14), transparent 60%),
+      radial-gradient(50rem 40rem at 0% 8%, rgb(var(--accent) / 0.09), transparent 55%);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4 {
+    @apply font-heading font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-[10px] px-5 py-3 text-sm font-semibold transition-all duration-200;
+  }
+  .btn-accent {
+    @apply text-accent-foreground;
+    background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent)));
+  }
+  .btn-accent:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+    @apply shadow-glow;
+  }
+  .btn-outline {
+    @apply border border-border bg-surface/50;
+  }
+  .btn-outline:hover {
+    @apply border-accent;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-accent;
+    background: rgb(var(--accent) / 0.1);
+    border-color: rgb(var(--accent) / 0.3);
+  }
+  .card {
+    @apply rounded-lg border border-border bg-surface/60 p-6 transition-all duration-200;
+  }
+  .card:hover {
+    @apply border-accent/50 shadow-glow-sm;
+  }
+}
