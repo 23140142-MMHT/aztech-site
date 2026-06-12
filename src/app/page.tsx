@@ -82,48 +82,38 @@ export default function Home() {
 
       {/* ───────────────── Nosotros / Historia ───────────────── */}
       <section id="nosotros" className="mx-auto max-w-binder px-6 py-20">
-        {/* Intro */}
-        <div className="max-w-3xl">
-          <span className="badge">Nosotros</span>
-          <h2 className="mt-4 text-3xl sm:text-4xl">
-            Más que un equipo de robótica
-          </h2>
-          <p className="mt-4 text-muted-foreground">{history.blurb}</p>
-          <p className="mt-4 text-muted-foreground">
-            Creemos que la tecnología debe ser{" "}
-            <strong className="text-foreground">
-              accesible para todos y una herramienta de cambio social
-            </strong>
-            , no solo un fin técnico. Nacimos en 2019 dentro de FTC para formar
-            jóvenes líderes capaces de transformar su entorno, bajo una filosofía
-            de crecimiento constante, colaboración y aprendizaje continuo.
-          </p>
-          <p className="mt-4 text-muted-foreground">
-            Hemos evolucionado temporada a temporada: en Ultimate Goal
-            consolidamos nuestra identidad, y hoy, en Decode (2026), acumulamos
-            logros como el Inspire Award y el Think Award (en dos ocasiones),
-            reflejo de la solidez de nuestra ingeniería y nuestro impacto en la
-            comunidad.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-2">
-            {achievements.map((a) => (
-              <span key={a.name} className="badge" title={a.note}>
-                🏆 {a.name}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Foto del equipo + trayectoria */}
-        <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-start">
-          <div className="overflow-hidden rounded-2xl border border-border shadow-glow">
-            <Image
-              src="/brand/team.png"
-              alt="Equipo Aztech II 17626"
-              width={2000}
-              height={1545}
-              className="h-auto w-full object-cover"
-            />
+        {/* Texto (2/3) + trayectoria (1/3) */}
+        <div className="grid gap-10 md:grid-cols-3 md:items-start">
+          <div className="md:col-span-2">
+            <span className="badge">Nosotros</span>
+            <h2 className="mt-4 text-3xl sm:text-4xl">
+              Más que un equipo de robótica
+            </h2>
+            <p className="mt-4 text-muted-foreground">{history.blurb}</p>
+            <p className="mt-4 text-muted-foreground">
+              Creemos que la tecnología debe ser{" "}
+              <strong className="text-foreground">
+                accesible para todos y una herramienta de cambio social
+              </strong>
+              , no solo un fin técnico. Nacimos en 2019 dentro de FTC para formar
+              jóvenes líderes capaces de transformar su entorno, bajo una
+              filosofía de crecimiento constante, colaboración y aprendizaje
+              continuo.
+            </p>
+            <p className="mt-4 text-muted-foreground">
+              Hemos evolucionado temporada a temporada: en Ultimate Goal
+              consolidamos nuestra identidad, y hoy, en Decode (2026), acumulamos
+              logros como el Inspire Award y el Think Award (en dos ocasiones),
+              reflejo de la solidez de nuestra ingeniería y nuestro impacto en la
+              comunidad.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {achievements.map((a) => (
+                <span key={a.name} className="badge" title={a.note}>
+                  🏆 {a.name}
+                </span>
+              ))}
+            </div>
           </div>
           <div className="card overflow-visible">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-accent">
@@ -135,6 +125,18 @@ export default function Home() {
             </p>
             <Trajectory seasons={history.seasons} />
           </div>
+        </div>
+
+        {/* Foto del equipo a todo lo ancho */}
+        <div className="mt-12 overflow-hidden rounded-2xl border border-border shadow-glow">
+          <Image
+            src="/brand/team.png"
+            alt="Equipo Aztech II 17626"
+            width={2000}
+            height={1545}
+            className="h-auto w-full object-cover"
+            sizes="100vw"
+          />
         </div>
       </section>
 
