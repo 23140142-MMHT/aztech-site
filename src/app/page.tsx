@@ -127,32 +127,30 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Foto del equipo a todo lo ancho */}
-        <div className="mt-12 overflow-hidden rounded-2xl border border-border shadow-glow">
-          <Image
-            src="/brand/team.png"
-            alt="Equipo Aztech II 17626"
-            width={2000}
-            height={1545}
-            className="h-auto w-full object-cover"
-            sizes="100vw"
-          />
-        </div>
-      </section>
-
-      {/* ───────────────── Misión / Visión / Propósito ───────────────── */}
-      <section className="mx-auto max-w-binder px-6 py-12">
-        <div className="grid gap-6 md:grid-cols-3">
-          {[
-            { t: "Misión", d: identity.mission },
-            { t: "Visión", d: identity.vision },
-            { t: "Propósito", d: identity.purpose },
-          ].map((c) => (
-            <div key={c.t} className="card">
-              <h3 className="text-xl text-accent">{c.t}</h3>
-              <p className="mt-3 text-sm text-muted-foreground">{c.d}</p>
-            </div>
-          ))}
+        {/* Foto del equipo (a un costado) + Misión / Visión / Propósito */}
+        <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-stretch">
+          <div className="overflow-hidden rounded-2xl border border-border shadow-glow">
+            <Image
+              src="/brand/team.png"
+              alt="Equipo Aztech II 17626"
+              width={2000}
+              height={1545}
+              className="h-full min-h-[18rem] w-full object-cover"
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
+          <div className="grid gap-6">
+            {[
+              { t: "Misión", d: identity.mission },
+              { t: "Visión", d: identity.vision },
+              { t: "Propósito", d: identity.purpose },
+            ].map((c) => (
+              <div key={c.t} className="card">
+                <h3 className="text-xl text-accent">{c.t}</h3>
+                <p className="mt-3 text-sm text-muted-foreground">{c.d}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
