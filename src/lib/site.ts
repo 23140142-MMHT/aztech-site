@@ -64,7 +64,7 @@ export type Season = {
 
 export const history = {
   blurb:
-    "Aztech II surgió en 2019 dentro del programa FIRST Tech Challenge con la meta de formar jóvenes líderes capaces de transformar su entorno. Desde entonces operamos bajo una filosofía de crecimiento constante, colaboración y aprendizaje continuo.",
+    "Somos Aztech II (FTC 17626), un equipo de FIRST Tech Challenge en México apasionado por la innovación, la inclusión y el uso intencional de la tecnología. Integramos a personas de orígenes diversos —niños, adolescentes, mujeres, migrantes y personas con discapacidad o en rehabilitación— para desarrollarse en áreas STEM mediante la robótica y generar conciencia sobre la reducción de la huella de carbono.",
   seasons: [
     {
       label: "Ultimate Goal",
