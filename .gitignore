@@ -1,13 +1,2 @@
-/node_modules
-/.next
-/out
-/build
-.DS_Store
-*.pem
-npm-debug.log*
-.env*
-/coverage
-next-env.d.ts
-*.tsbuildinfo
-
 .vercel
+node_modules
