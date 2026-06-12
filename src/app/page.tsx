@@ -31,6 +31,9 @@ export default function Home() {
           }}
         />
 
+        {/* Degradado de cierre: funde el hero hacia el negro del fondo */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-72 bg-gradient-to-b from-transparent to-background" />
+
         {/* Programa, vertical al costado */}
         <span className="absolute left-5 top-1/2 hidden -translate-y-1/2 font-mono text-xs tracking-[0.5em] text-muted-foreground [writing-mode:vertical-rl] md:block">
           FIRST TECH CHALLENGE
