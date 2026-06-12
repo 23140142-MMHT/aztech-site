@@ -83,7 +83,7 @@ export default function Home() {
       {/* ───────────────── Nosotros / Historia ───────────────── */}
       <section id="nosotros" className="mx-auto max-w-binder px-6 py-20">
         {/* Texto (2/3) + trayectoria (1/3) */}
-        <div className="grid gap-10 md:grid-cols-3 md:items-start">
+        <div className="grid gap-10 md:grid-cols-3 md:items-stretch">
           <div className="md:col-span-2">
             <span className="badge">Nosotros</span>
             <h2 className="mt-4 text-3xl sm:text-4xl">
@@ -115,7 +115,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="card overflow-visible">
+          <div className="card h-full overflow-visible">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-accent">
               Nuestra trayectoria FIRST
             </h3>
