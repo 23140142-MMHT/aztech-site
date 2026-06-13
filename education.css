@@ -1,0 +1,8 @@
+/* ════════════════════════════════════════════════════════════════════════
+   Tema del pilar Education — ámbar/dorado. Base compartida en styles.css.
+   Aquí irá la estética propia de esta sección (en construcción).
+   ════════════════════════════════════════════════════════════════════════ */
+:root {
+  --primary: 217 119 6;   /* #d97706 ámbar */
+  --accent: 251 191 36;   /* #fbbf24 dorado */
+}

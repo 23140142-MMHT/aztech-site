@@ -1,0 +1,8 @@
+/* ════════════════════════════════════════════════════════════════════════
+   Tema del pilar Environment — verde. Base compartida en styles.css.
+   Aquí irá la estética propia de esta sección (en construcción).
+   ════════════════════════════════════════════════════════════════════════ */
+:root {
+  --primary: 22 163 74;   /* #16a34a verde */
+  --accent: 74 222 128;   /* #4ade80 verde claro */
+}

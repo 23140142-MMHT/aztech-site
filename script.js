@@ -23,4 +23,35 @@
       team.style.display = "none";
     });
   }
+
+  // Menú desplegable "Our Pillars" (clic para abrir/cerrar; hover ya en CSS).
+  var dropdowns = document.querySelectorAll(".nav-dropdown");
+
+  function closeAll() {
+    dropdowns.forEach(function (d) {
+      d.classList.remove("open");
+      var b = d.querySelector(".nav-dropdown-btn");
+      if (b) b.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  dropdowns.forEach(function (d) {
+    var btn = d.querySelector(".nav-dropdown-btn");
+    if (!btn) return;
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var isOpen = d.classList.contains("open");
+      closeAll();
+      if (!isOpen) {
+        d.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+
+  // Cerrar al hacer clic fuera o con Escape.
+  document.addEventListener("click", closeAll);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeAll();
+  });
 })();
