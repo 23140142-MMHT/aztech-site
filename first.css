@@ -463,31 +463,46 @@
   color: rgb(var(--accent));
   white-space: nowrap;
 }
-.alliance-list { margin-top: 1rem; display: grid; gap: 0.85rem; list-style: none; padding: 0; }
-.alliance-list li {
-  position: relative;
-  padding-left: 1.5rem;
-  color: rgb(var(--muted-foreground));
-  font-size: 0.97rem;
-  line-height: 1.55;
+/* ───────── Logos de los equipos de la Alliance ───────── */
+.alliance-logos {
+  margin-top: 2.75rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
-.alliance-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 9999px;
-  background: rgb(var(--first-orange));
+@media (min-width: 560px) { .alliance-logos { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 800px) { .alliance-logos { grid-template-columns: repeat(5, 1fr); } }
+.al-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  padding: 1.1rem;
+  border-radius: 16px;
+  background: rgb(var(--card));
+  border: 1px solid rgb(var(--border));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
-
-/* "Lo que nos une" — fila completa bajo la lista de equipos */
-.alliance-united { margin-top: 2.75rem; }
-.alliance-united h3 { font-size: 1.2rem; color: rgb(var(--primary)); }
-@media (min-width: 768px) {
-  .alliance-list--cols { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.al-logo:hover {
+  transform: translateY(-4px);
+  border-color: rgb(var(--first-orange) / 0.55);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 0 1px rgb(var(--first-orange) / 0.25);
 }
+.al-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+}
+/* Logos de línea oscura: necesitan placa clara para contrastar */
+.al-logo--plate {
+  background: #f4ede0;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.al-logo--plate img { filter: none; }
 
 /* ───────── Mapa de la Alliance con puntos ───────── */
 .alliance-map {
