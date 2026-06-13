@@ -117,8 +117,8 @@
 }
 
 /* Cifras destacadas */
+.first-stats-section { padding-top: 0; }
 .first-stats {
-  margin-top: 2.5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
@@ -164,6 +164,257 @@
 }
 .value-card h3 { margin-top: 0.5rem; font-size: 1.25rem; }
 .value-card p { margin-top: 0.75rem; font-size: 0.95rem; color: rgb(var(--muted-foreground)); }
+
+/* ───────── ¿Por qué lo hacemos? ───────── */
+.first-quote {
+  margin-top: 1.75rem;
+  max-width: 52rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1.3rem, 3.2vw, 2rem);
+  line-height: 1.35;
+}
+.first-quote .hl { color: rgb(var(--primary)); }
+
+.why-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 768px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+.why-card {
+  border-left: 3px solid rgb(var(--first-orange));
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: rgb(var(--surface) / 0.5);
+  padding: 1.25rem 1.5rem;
+  color: rgb(var(--muted-foreground));
+  font-size: 0.98rem;
+}
+
+.first-origin {
+  position: relative;
+  overflow: hidden;
+  margin-top: 2.5rem;
+  border: 1px solid rgb(var(--border));
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgb(var(--surface) / 0.85), rgb(var(--surface-2) / 0.6));
+  padding: 1.75rem 2rem;
+}
+.first-origin::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(22rem 14rem at 100% 0%, rgb(var(--first-orange) / 0.18), transparent 60%);
+  pointer-events: none;
+}
+.origin-tag {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgb(var(--accent));
+}
+.first-origin p { position: relative; color: rgb(var(--foreground)); font-size: 1.05rem; line-height: 1.6; }
+.first-origin strong { color: rgb(var(--primary)); }
+
+/* ───────── Objetivos ───────── */
+.obj-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+@media (min-width: 640px) { .obj-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .obj-grid { grid-template-columns: repeat(3, 1fr); } }
+.obj-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid rgb(var(--border));
+  background: rgb(var(--surface) / 0.6);
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+.obj-card:hover { border-color: rgb(var(--primary) / 0.6); transform: translateY(-3px); }
+.obj-card .obj-n {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgb(var(--first-orange));
+}
+.obj-card h3 { margin-top: 0.5rem; font-size: 1.2rem; }
+.obj-card p { margin-top: 0.6rem; font-size: 0.95rem; color: rgb(var(--muted-foreground)); }
+
+/* ───────── Impacto en la comunidad ───────── */
+.impact-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+@media (min-width: 768px) { .impact-grid { grid-template-columns: repeat(3, 1fr); } }
+.impact-card {
+  border-radius: var(--radius);
+  border: 1px solid rgb(var(--border));
+  border-top: 3px solid rgb(var(--primary));
+  background: rgb(var(--surface) / 0.6);
+  padding: 1.5rem;
+}
+.impact-card h3 { font-size: 1.15rem; color: rgb(var(--primary)); }
+.impact-card p { margin-top: 0.75rem; font-size: 0.95rem; color: rgb(var(--muted-foreground)); }
+
+/* ───────── Modalidades ───────── */
+.mod-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+@media (min-width: 768px) { .mod-grid { grid-template-columns: repeat(3, 1fr); } }
+.mod-card {
+  border-radius: var(--radius);
+  border: 1px solid rgb(var(--border));
+  background: rgb(var(--surface) / 0.6);
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+.mod-card:hover { border-color: rgb(var(--first-orange) / 0.6); transform: translateY(-3px); }
+.mod-card .mod-k {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgb(var(--first-orange));
+}
+.mod-card h3 { margin-top: 0.4rem; font-size: 1.15rem; }
+.mod-card p { margin-top: 0.6rem; font-size: 0.95rem; color: rgb(var(--muted-foreground)); }
+
+/* Momento destacado (Honduras) */
+.first-feature {
+  position: relative;
+  overflow: hidden;
+  margin-top: 2.5rem;
+  border-radius: var(--radius);
+  border: 1px solid rgb(var(--primary) / 0.4);
+  background: linear-gradient(135deg, rgb(var(--surface-2) / 0.9), rgb(var(--surface) / 0.7));
+  padding: 1.75rem 2rem;
+}
+.first-feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(26rem 16rem at 0% 100%, rgb(var(--primary) / 0.16), transparent 60%);
+  pointer-events: none;
+}
+.first-feature .ff-tag {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgb(var(--accent));
+}
+.first-feature h3 { position: relative; font-size: clamp(1.2rem, 3vw, 1.6rem); }
+.first-feature p { position: relative; margin-top: 0.75rem; color: rgb(var(--muted-foreground)); line-height: 1.6; }
+
+/* ───────── Aztech Alliance ───────── */
+.alliance {
+  background: rgb(var(--surface) / 0.4);
+  border-top: 1px solid rgb(var(--border));
+  border-bottom: 1px solid rgb(var(--border));
+}
+.alliance-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 900px) { .alliance-grid { grid-template-columns: 1.05fr 0.95fr; align-items: start; } }
+.alliance-teams { display: grid; gap: 0.75rem; }
+.team-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.65rem;
+  border: 1px solid rgb(var(--border));
+  background: rgb(var(--surface) / 0.6);
+}
+.team-row .tm { font-weight: 600; font-size: 0.95rem; }
+.team-row .st {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: rgb(var(--accent));
+  white-space: nowrap;
+}
+.alliance-obj h3 { font-size: 1.2rem; color: rgb(var(--primary)); }
+.alliance-list { margin-top: 1rem; display: grid; gap: 0.85rem; list-style: none; padding: 0; }
+.alliance-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: rgb(var(--muted-foreground));
+  font-size: 0.97rem;
+  line-height: 1.55;
+}
+.alliance-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 9999px;
+  background: rgb(var(--first-orange));
+}
+
+/* ───────── Iniciativas de temporada ───────── */
+.init-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+@media (min-width: 768px) { .init-grid { grid-template-columns: repeat(3, 1fr); } }
+.init-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  color: #fff;
+  background: linear-gradient(135deg, rgb(var(--first-orange)), rgb(var(--first-red)));
+}
+.init-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(18rem 12rem at 110% -10%, rgb(var(--primary) / 0.4), transparent 60%);
+  pointer-events: none;
+}
+.init-card .init-n { position: relative; font-family: var(--font-mono); font-size: 0.8rem; opacity: 0.85; }
+.init-card h3 { position: relative; margin-top: 0.25rem; font-size: 1.3rem; }
+.init-card p { position: relative; margin-top: 0.6rem; font-size: 0.92rem; color: rgba(255, 255, 255, 0.92); line-height: 1.55; }
+
+/* ───────── Metas ───────── */
+.goals-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 768px) { .goals-grid { grid-template-columns: repeat(2, 1fr); } }
+.goal-col h3 { font-size: 1.2rem; color: rgb(var(--primary)); }
+.goal-list { margin-top: 1rem; display: grid; gap: 0.75rem; }
+.goal-item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgb(var(--border));
+  background: rgb(var(--surface) / 0.6);
+}
+.goal-item .gi { color: rgb(var(--first-orange)); font-weight: 700; }
+.goal-item p { font-size: 0.93rem; color: rgb(var(--muted-foreground)); line-height: 1.5; }
+.goal-item strong { color: rgb(var(--foreground)); }
 
 /* ───────── Banda inferior (degradado naranja → rojo) ───────── */
 .first-band {
