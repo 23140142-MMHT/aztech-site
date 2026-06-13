@@ -220,6 +220,21 @@
 .first-origin p { position: relative; color: rgb(var(--foreground)); font-size: 1.05rem; line-height: 1.6; }
 .first-origin strong { color: rgb(var(--primary)); }
 
+/* Versión con imagen */
+.first-origin--media { display: grid; gap: 1.75rem; align-items: center; }
+@media (min-width: 768px) {
+  .first-origin--media { grid-template-columns: 0.85fr 1.15fr; }
+}
+.origin-media {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgb(var(--first-orange) / 0.45);
+  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.6);
+}
+.origin-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.origin-body { position: relative; }
+
 /* ───────── Objetivos ───────── */
 .obj-grid {
   margin-top: 2.5rem;
