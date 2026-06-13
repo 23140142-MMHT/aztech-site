@@ -229,8 +229,22 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
   margin-bottom: 1.75rem;
 }
+.bs-btn {
+  margin-left: auto;
+  color: #fff;
+  border: none;
+  background: linear-gradient(120deg, #4f7cc4, #2e4f8f);
+  box-shadow: 0 10px 24px -10px rgba(46, 79, 143, 0.8);
+}
+.bs-btn:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px -10px rgba(46, 79, 143, 0.9);
+}
+@media (max-width: 560px) { .bs-btn { margin-left: 0; } }
 .bs-logo {
   width: clamp(3rem, 8vw, 4.25rem);
   height: auto;
