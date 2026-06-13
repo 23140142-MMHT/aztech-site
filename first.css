@@ -69,13 +69,11 @@
   text-transform: uppercase;
   color: rgb(var(--accent));
 }
-.first-title {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: clamp(3.5rem, 13vw, 8rem);
-  line-height: 0.92;
-  letter-spacing: -0.03em;
-  color: rgb(var(--primary));
+.first-logo-wrap { margin: 0; line-height: 0; }
+.first-logo {
+  width: clamp(14rem, 40vw, 24rem);
+  height: auto;
+  margin: 0 auto;
 }
 .first-subtitle {
   margin-top: 0.75rem;
