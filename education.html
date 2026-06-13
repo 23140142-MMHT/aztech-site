@@ -16,8 +16,6 @@
         <img src="brand/wordmark.png" alt="Aztech II" />
       </a>
       <ul class="nav-links">
-        <li><a href="index.html#nosotros" data-en="About us" data-fr="À propos">Quiénes somos</a></li>
-        <li><a href="index.html#identidad" data-en="Identity" data-fr="Identité">Identidad</a></li>
         <li class="nav-dropdown">
           <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true" data-en='Our Pillars <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>' data-fr='Nos piliers <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>'>
             Our Pillars
@@ -29,8 +27,6 @@
             <li><a href="environment.html">Environment</a></li>
           </ul>
         </li>
-        <li><a href="https://aztech-17626-our-impact.vercel.app" data-en="Impact" data-fr="Impact">Impacto</a></li>
-        <li><a href="index.html#contacto" data-en="Contact" data-fr="Contact">Contacto</a></li>
         <li>
           <a class="nav-binder" href="https://purple-technical-17626.vercel.app" target="_blank" rel="noopener noreferrer">Technical Binder ↗</a>
         </li>
@@ -41,16 +37,37 @@
           <button type="button" class="lang-btn" data-lang="en">EN</button>
           <button type="button" class="lang-btn" data-lang="fr">FR</button>
         </div>
-        <a class="nav-follow" href="https://www.instagram.com/aztech_2_17626/" target="_blank" rel="noopener noreferrer" data-en="Follow us" data-fr="Suivez-nous">Síguenos</a>
-        <span class="nav-search" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <circle cx="11" cy="11" r="7" />
-            <path d="m21 21-4.3-4.3" />
-          </svg>
-        </span>
+        <button type="button" class="nav-burger" aria-label="Menú" aria-expanded="false" aria-controls="site-drawer">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </header>
+
+  <!-- ───────── Menú lateral desplegable ───────── -->
+  <div class="drawer-backdrop" hidden></div>
+  <aside id="site-drawer" class="drawer" aria-hidden="true" aria-label="Menú">
+    <div class="drawer-top">
+      <span class="drawer-title" data-en="Menu" data-fr="Menu">Menú</span>
+      <button type="button" class="drawer-close" aria-label="Cerrar menú">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12" /></svg>
+      </button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html" data-en="Home" data-fr="Accueil">Inicio</a>
+      <a href="index.html#nosotros" data-en="About us" data-fr="À propos">Quiénes somos</a>
+      <a href="index.html#identidad" data-en="Identity" data-fr="Identité">Identidad</a>
+      <span class="drawer-group" data-en="Our Pillars" data-fr="Nos piliers">Our Pillars</span>
+      <a href="first.html" class="drawer-sub">FIRST</a>
+      <a href="education.html" class="drawer-sub" data-en="Education" data-fr="Éducation">Education</a>
+      <a href="environment.html" class="drawer-sub" data-en="Environment" data-fr="Environnement">Environment</a>
+      <a href="https://aztech-17626-our-impact.vercel.app" data-en="Impact" data-fr="Impact">Impacto</a>
+      <a href="index.html#contacto" data-en="Contact" data-fr="Contact">Contacto</a>
+      <a href="index.html#sponsors">Sponsors</a>
+      <a href="https://purple-technical-17626.vercel.app" target="_blank" rel="noopener noreferrer">Technical Binder ↗</a>
+      <a href="https://www.instagram.com/aztech_2_17626/" target="_blank" rel="noopener noreferrer" data-en="Follow us" data-fr="Suivez-nous">Síguenos</a>
+    </nav>
+  </aside>
 
   <main class="coming-hero">
     <span class="coming-tag" data-en="Our Pillars · Education" data-fr="Nos piliers · Éducation">Our Pillars · Education</span>

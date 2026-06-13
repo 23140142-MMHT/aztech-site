@@ -54,4 +54,39 @@
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeAll();
   });
+
+  // ── Menú lateral desplegable (drawer) ──────────────────────────────────
+  var burger = document.querySelector(".nav-burger");
+  var drawer = document.getElementById("site-drawer");
+  var backdrop = document.querySelector(".drawer-backdrop");
+  var drawerClose = document.querySelector(".drawer-close");
+
+  function openDrawer() {
+    document.body.classList.add("drawer-open");
+    if (burger) burger.setAttribute("aria-expanded", "true");
+    if (drawer) drawer.setAttribute("aria-hidden", "false");
+  }
+  function closeDrawer() {
+    document.body.classList.remove("drawer-open");
+    if (burger) burger.setAttribute("aria-expanded", "false");
+    if (drawer) drawer.setAttribute("aria-hidden", "true");
+  }
+
+  if (burger) {
+    burger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (document.body.classList.contains("drawer-open")) closeDrawer();
+      else openDrawer();
+    });
+  }
+  if (backdrop) backdrop.addEventListener("click", closeDrawer);
+  if (drawerClose) drawerClose.addEventListener("click", closeDrawer);
+  if (drawer) {
+    drawer.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", closeDrawer);
+    });
+  }
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeDrawer();
+  });
 })();

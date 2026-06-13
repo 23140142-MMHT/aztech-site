@@ -238,6 +238,115 @@ a.badge:hover { border-color: rgb(var(--accent)); }
 }
 .nav-search:hover { border-color: rgb(var(--accent)); color: rgb(var(--accent)); }
 
+/* ───────── Botón hamburguesa ───────── */
+.nav-burger {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.6rem;
+  border: 1px solid rgb(var(--border));
+  border-radius: 9999px;
+  background: rgb(var(--foreground) / 0.04);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.nav-burger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: rgb(var(--foreground) / 0.85);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease, background 0.2s ease;
+}
+.nav-burger:hover { border-color: rgb(var(--accent)); }
+.nav-burger:hover span { background: rgb(var(--accent)); }
+body.drawer-open .nav-burger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+body.drawer-open .nav-burger span:nth-child(2) { opacity: 0; }
+body.drawer-open .nav-burger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ───────── Menú lateral desplegable (drawer) ───────── */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgb(var(--background) / 0.6);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+  z-index: 60;
+}
+.drawer-backdrop[hidden] { display: block; }
+body.drawer-open .drawer-backdrop { opacity: 1; pointer-events: auto; }
+body.drawer-open { overflow: hidden; }
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(330px, 86vw);
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.25rem 2rem;
+  background: rgb(20 12 33);
+  border-left: 1px solid rgb(var(--border));
+  box-shadow: -24px 0 60px rgba(0, 0, 0, 0.5);
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 61;
+  overflow-y: auto;
+}
+body.drawer-open .drawer { transform: translateX(0); }
+.drawer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+.drawer-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(var(--muted-foreground));
+}
+.drawer-close {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  border: 1px solid rgb(var(--border));
+  background: transparent;
+  color: rgb(var(--foreground) / 0.8);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.drawer-close:hover { border-color: rgb(var(--accent)); color: rgb(var(--accent)); }
+.drawer-links { display: flex; flex-direction: column; gap: 0.1rem; }
+.drawer-links a {
+  display: block;
+  padding: 0.7rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: rgb(var(--foreground) / 0.9);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.drawer-links a:hover { background: rgb(var(--accent) / 0.12); color: rgb(var(--accent)); }
+.drawer-links a.drawer-sub { padding-left: 1.5rem; font-size: 0.92rem; color: rgb(var(--foreground) / 0.78); }
+.drawer-group {
+  margin-top: 0.7rem;
+  padding: 0.4rem 0.6rem 0.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(var(--muted-foreground));
+}
+
 /* Menú desplegable "Our Pillars" */
 .nav-dropdown { position: relative; }
 .nav-dropdown-btn {
