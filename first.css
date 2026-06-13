@@ -117,12 +117,12 @@
 }
 
 /* Cifras destacadas */
-.first-stats-section { padding-top: 0; }
 .first-stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
+.alliance-stats { margin-top: 2.5rem; }
 @media (min-width: 640px) { .first-stats { grid-template-columns: repeat(4, 1fr); } }
 .first-stat {
   border-radius: var(--radius);
@@ -339,6 +339,14 @@
   background: rgb(var(--surface) / 0.4);
   border-top: 1px solid rgb(var(--border));
   border-bottom: 1px solid rgb(var(--border));
+}
+.alliance-sub {
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgb(var(--first-orange));
 }
 .alliance-grid {
   margin-top: 2.5rem;
