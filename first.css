@@ -367,10 +367,13 @@
   position: relative;
   overflow: hidden;
   margin-top: 2.5rem;
+  display: grid;
   border-radius: var(--radius);
   border: 1px solid rgb(var(--primary) / 0.4);
   background: linear-gradient(135deg, rgb(var(--surface-2) / 0.9), rgb(var(--surface) / 0.7));
-  padding: 1.75rem 2rem;
+}
+@media (min-width: 768px) {
+  .first-feature { grid-template-columns: 0.95fr 1.05fr; align-items: stretch; }
 }
 .first-feature::before {
   content: "";
@@ -379,6 +382,22 @@
   background: radial-gradient(26rem 16rem at 0% 100%, rgb(var(--primary) / 0.16), transparent 60%);
   pointer-events: none;
 }
+.ff-media {
+  position: relative;
+  min-height: 220px;
+  border-bottom: 1px solid rgb(var(--primary) / 0.3);
+}
+@media (min-width: 768px) {
+  .ff-media { border-bottom: none; border-right: 1px solid rgb(var(--primary) / 0.3); }
+}
+.ff-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ff-body { padding: 1.75rem 2rem; }
 .first-feature .ff-tag {
   position: relative;
   display: inline-block;
