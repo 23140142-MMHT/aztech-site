@@ -318,6 +318,7 @@
 }
 .impact-card h3 { font-size: 1.15rem; color: rgb(var(--primary)); }
 .impact-card p { margin-top: 0.75rem; font-size: 0.95rem; color: rgb(var(--muted-foreground)); }
+.impact-card strong, .first-text strong { color: rgb(var(--foreground)); font-weight: 700; }
 
 /* ───────── Modalidades ───────── */
 .mod-grid {
