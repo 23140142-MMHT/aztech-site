@@ -140,6 +140,10 @@
 }
 @media (min-width: 860px) {
   .env-why-intro { grid-template-columns: 1.05fr 0.95fr; gap: 3rem; }
+  /* Variante con la imagen a la izquierda (ritmo alternado) */
+  .env-why-intro--flip { grid-template-columns: 0.95fr 1.05fr; }
+  .env-why-intro--flip .env-why-figure { order: 1; }
+  .env-why-intro--flip .env-why-text { order: 2; }
 }
 .env-why-text .env-text { margin-top: 1.25rem; }
 .env-why-figure {
