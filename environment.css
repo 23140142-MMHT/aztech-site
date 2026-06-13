@@ -364,7 +364,12 @@
 }
 @media (min-width: 820px) {
   .phase { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 1.9rem; align-items: start; }
+  /* Fase a ancho completo: texto arriba, foto banner abajo */
+  .phase--full { display: block; }
 }
+.phase--full .phase-media { margin-top: 1.5rem; }
+.env-shot--banner img { aspect-ratio: 16 / 6; object-fit: cover; }
+@media (max-width: 620px) { .env-shot--banner img { aspect-ratio: 16 / 9; } }
 .phase-head {
   display: flex;
   align-items: baseline;
