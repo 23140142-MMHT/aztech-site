@@ -328,13 +328,30 @@
 }
 @media (min-width: 768px) { .mod-grid { grid-template-columns: repeat(3, 1fr); } }
 .mod-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   border-radius: var(--radius);
   border: 1px solid rgb(var(--border));
   background: rgb(var(--surface) / 0.6);
-  padding: 1.5rem;
   transition: all 0.2s ease;
 }
 .mod-card:hover { border-color: rgb(var(--first-orange) / 0.6); transform: translateY(-3px); }
+.mod-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: rgb(var(--surface-2));
+  border-bottom: 1px solid rgb(var(--border));
+}
+.mod-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.mod-card:hover .mod-media img { transform: scale(1.05); }
+.mod-body { padding: 1.5rem; }
 .mod-card .mod-k {
   font-family: var(--font-mono);
   font-size: 0.75rem;
