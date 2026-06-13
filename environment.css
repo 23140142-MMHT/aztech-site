@@ -363,7 +363,7 @@
   padding: 1.6rem 1.75rem;
 }
 @media (min-width: 820px) {
-  .phase { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 1.9rem; align-items: stretch; }
+  .phase { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 1.9rem; align-items: start; }
 }
 .phase-head {
   display: flex;
@@ -439,30 +439,28 @@
 }
 .phase-highlight strong { color: rgb(var(--primary)); }
 
-/* Media de cada fase + placeholders de foto */
+/* Media de cada fase (fotos) */
 .phase-media {
   margin-top: 1.25rem;
   display: grid;
   gap: 0.85rem;
+  grid-template-columns: 1fr 1fr;
   align-content: start;
 }
+.phase-media--single { grid-template-columns: 1fr; }
 @media (min-width: 820px) { .phase-media { margin-top: 0; } }
-.env-photo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-  text-align: center;
-  min-height: 9.5rem;
-  padding: 1.25rem;
-  border-radius: var(--radius);
-  border: 2px dashed rgb(var(--primary) / 0.45);
-  background: rgb(var(--primary) / 0.06);
-  color: rgb(var(--muted-foreground));
+.env-shot {
+  margin: 0;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  border: 1px solid rgb(var(--primary) / 0.25);
+  background: rgb(var(--surface) / 0.65);
+  box-shadow: 0 12px 28px -16px rgb(var(--primary) / 0.5);
 }
-.env-photo svg { width: 1.9rem; height: 1.9rem; color: rgb(var(--primary)); opacity: 0.8; }
-.env-photo span { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.03em; }
+.env-shot img { display: block; width: 100%; height: auto; }
+/* El QR conserva su fondo oscuro propio y un poco de aire */
+.env-shot--qr { background: #0a0f1e; }
+.env-shot--qr img { padding: 0.5rem; }
 
 /* Cifras destacadas */
 .env-stats {
