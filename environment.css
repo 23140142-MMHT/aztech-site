@@ -1,8 +1,342 @@
 /* ════════════════════════════════════════════════════════════════════════
-   Tema del pilar Environment — verde. Base compartida en styles.css.
-   Aquí irá la estética propia de esta sección (en construcción).
+   Pilar Environment — paleta verde (Green Pillar / Blue Switch).
+   Hereda la base de styles.css y la re-tematiza aquí.
    ════════════════════════════════════════════════════════════════════════ */
 :root {
   --primary: 46 168 63;    /* #2ea83f verde Environment */
   --accent: 138 197 49;    /* #8ac531 verde lima */
+}
+
+/* El logo del footer brilla en verde */
+.footer-logo { filter: drop-shadow(0 0 22px rgba(46, 168, 63, 0.45)); }
+
+/* ───────── Hero ───────── */
+.env-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 9rem 1.5rem 5rem;
+  text-align: center;
+}
+.env-hero-inner { max-width: 56rem; margin-inline: auto; }
+.env-hero-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: radial-gradient(46rem 30rem at 50% 8%, rgb(var(--primary) / 0.22), transparent 62%);
+}
+.env-particles {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.env-particles .particle {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgb(var(--accent) / 0.6);
+  animation: env-float 9s ease-in-out infinite;
+}
+@keyframes env-float {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-16px); opacity: 0.9; }
+}
+
+.env-topline {
+  width: 4rem;
+  height: 4px;
+  margin: 0 auto 1.75rem;
+  border-radius: 9999px;
+  background: linear-gradient(to right, rgb(var(--primary)), rgb(var(--accent)));
+}
+.env-kicker {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgb(var(--accent));
+}
+.env-title {
+  font-size: clamp(2.75rem, 9vw, 5rem);
+  line-height: 1.02;
+  background: linear-gradient(120deg, rgb(var(--accent)), rgb(var(--primary)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.env-subtitle {
+  margin-top: 0.75rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  color: rgb(var(--accent));
+}
+.env-lead {
+  margin: 1.5rem auto 0;
+  max-width: 44rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgb(var(--muted-foreground));
+}
+.env-hero-actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* ───────── Secciones ───────── */
+.env-section { max-width: 1100px; margin-inline: auto; padding: 4.5rem 1.5rem; }
+.env-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(var(--primary));
+}
+.env-section h2 {
+  margin-top: 0.75rem;
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
+}
+.env-text {
+  margin-top: 1.25rem;
+  max-width: 48rem;
+  color: rgb(var(--muted-foreground));
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.env-text strong { color: rgb(var(--foreground)); font-weight: 700; }
+.env-text .hl { color: rgb(var(--primary)); font-weight: 700; }
+
+/* ───────── Objetivos ───────── */
+.obj-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+@media (min-width: 640px) { .obj-grid { grid-template-columns: repeat(2, 1fr); } }
+.env-obj {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid rgb(var(--border));
+  border-left: 3px solid rgb(var(--primary));
+  background: rgb(var(--surface) / 0.6);
+  padding: 1.5rem 1.6rem;
+  transition: all 0.2s ease;
+}
+.env-obj:hover { border-color: rgb(var(--primary) / 0.6); transform: translateY(-3px); }
+.env-obj .obj-n {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgb(var(--accent));
+}
+.env-obj h3 { margin-top: 0.4rem; font-size: 1.15rem; }
+.env-obj p { margin-top: 0.6rem; font-size: 0.96rem; color: rgb(var(--muted-foreground)); line-height: 1.6; }
+
+/* ───────── Público objetivo ───────── */
+.aud-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+@media (min-width: 768px) { .aud-grid { grid-template-columns: repeat(2, 1fr); } }
+.aud-card {
+  border-radius: var(--radius);
+  border: 1px solid rgb(var(--border));
+  border-top: 3px solid rgb(var(--primary));
+  background: rgb(var(--surface) / 0.6);
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+.aud-card:hover { border-color: rgb(var(--primary) / 0.6); transform: translateY(-3px); }
+.aud-card h3 { font-size: 1.15rem; color: rgb(var(--primary)); }
+.aud-card p { margin-top: 0.75rem; font-size: 0.95rem; color: rgb(var(--muted-foreground)); line-height: 1.6; }
+
+/* ───────── Cita / Why ───────── */
+.env-quote-block {
+  position: relative;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  border: 1px solid rgb(var(--primary) / 0.4);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgb(var(--surface) / 0.85), rgb(var(--surface-2) / 0.6));
+  padding: 2rem;
+}
+.env-quote-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(24rem 16rem at 100% 0%, rgb(var(--primary) / 0.16), transparent 60%);
+  pointer-events: none;
+}
+.env-quote {
+  position: relative;
+  max-width: 52rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2.8vw, 1.7rem);
+  line-height: 1.4;
+}
+.env-quote .hl { color: rgb(var(--primary)); }
+.env-quote-foot {
+  position: relative;
+  margin-top: 1.25rem;
+  color: rgb(var(--muted-foreground));
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* ───────── Cómo (sostenibilidad) ───────── */
+.how-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+@media (min-width: 768px) { .how-grid { grid-template-columns: repeat(3, 1fr); } }
+.how-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  color: #fff;
+  background: linear-gradient(135deg, rgb(var(--primary)), rgb(34 110 48));
+}
+.how-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(18rem 12rem at 110% -10%, rgb(var(--accent) / 0.4), transparent 60%);
+  pointer-events: none;
+}
+.how-card .how-k {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+.how-card h3 { position: relative; margin-top: 0.3rem; font-size: 1.2rem; }
+.how-card p { position: relative; margin-top: 0.6rem; font-size: 0.93rem; color: rgba(255, 255, 255, 0.92); line-height: 1.6; }
+
+/* ───────── Proceso (fases) ───────── */
+.phase {
+  margin-top: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid rgb(var(--border));
+  background: rgb(var(--surface) / 0.55);
+  padding: 1.75rem 2rem;
+}
+.phase-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+.phase-n {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgb(var(--accent));
+}
+.phase-head h3 { font-size: 1.4rem; color: rgb(var(--primary)); }
+.phase p { margin-top: 1rem; color: rgb(var(--muted-foreground)); line-height: 1.7; }
+.phase p strong { color: rgb(var(--foreground)); }
+.phase .env-bigq {
+  margin-top: 1.25rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2.6vw, 1.6rem);
+  line-height: 1.3;
+  color: rgb(var(--primary));
+}
+
+/* Cifras destacadas */
+.env-stats {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+@media (min-width: 768px) { .env-stats { grid-template-columns: repeat(4, 1fr); } }
+.env-stat {
+  border-radius: var(--radius);
+  border: 1px solid rgb(var(--border));
+  background: rgb(var(--surface) / 0.6);
+  padding: 1.25rem;
+  text-align: center;
+}
+.env-stat .num {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: rgb(var(--primary));
+}
+.env-stat .lbl { margin-top: 0.35rem; font-size: 0.8rem; color: rgb(var(--muted-foreground)); line-height: 1.4; }
+
+/* ───────── Metas ───────── */
+.goals-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 768px) { .goals-grid { grid-template-columns: repeat(2, 1fr); } }
+.goal-col h3 { font-size: 1.2rem; color: rgb(var(--primary)); }
+.goal-list { margin-top: 1rem; display: grid; gap: 0.75rem; }
+.goal-item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgb(var(--border));
+  background: rgb(var(--surface) / 0.6);
+}
+.goal-item .gi { color: rgb(var(--accent)); font-weight: 700; }
+.goal-item p { font-size: 0.93rem; color: rgb(var(--muted-foreground)); line-height: 1.55; }
+.goal-item strong { color: rgb(var(--foreground)); }
+
+/* ───────── Banda inferior (degradado verde) ───────── */
+.env-band {
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+  padding: 5.5rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgb(var(--primary)), rgb(34 110 48));
+}
+.env-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(30rem 20rem at 80% 120%, rgb(var(--accent) / 0.4), transparent 60%);
+  pointer-events: none;
+}
+.env-band-inner { position: relative; max-width: 44rem; margin-inline: auto; }
+.env-band h2 {
+  color: #fff;
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  line-height: 1.1;
+}
+.env-band p {
+  margin: 1rem auto 0;
+  max-width: 38rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+.env-band .btn-light {
+  margin-top: 1.75rem;
+  background: #fff;
+  color: rgb(var(--primary));
+  border: none;
+}
+.env-band .btn-light:hover {
+  filter: brightness(1.02);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
 }
