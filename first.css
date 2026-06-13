@@ -166,6 +166,14 @@
 .value-card p { margin-top: 0.75rem; font-size: 0.95rem; color: rgb(var(--muted-foreground)); }
 
 /* ───────── ¿Por qué lo hacemos? ───────── */
+.why-head {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .why-head { grid-template-columns: 1.45fr 0.55fr; gap: 2.5rem; }
+}
 .first-quote {
   margin-top: 1.75rem;
   max-width: 52rem;
@@ -175,6 +183,22 @@
   line-height: 1.35;
 }
 .first-quote .hl { color: rgb(var(--primary)); }
+
+.why-mascot { display: flex; justify-content: center; }
+.why-mascot img {
+  width: 100%;
+  max-width: 20rem;
+  height: auto;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.5));
+  animation: mascot-bob 5s ease-in-out infinite;
+}
+@keyframes mascot-bob {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+@media (max-width: 899px) {
+  .why-mascot img { max-width: 14rem; }
+}
 
 .why-grid {
   margin-top: 2.5rem;
@@ -339,6 +363,20 @@
   background: rgb(var(--surface) / 0.4);
   border-top: 1px solid rgb(var(--border));
   border-bottom: 1px solid rgb(var(--border));
+}
+.alliance-head {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .alliance-head { grid-template-columns: 1fr auto; gap: 2.5rem; }
+}
+.alliance-logo {
+  width: clamp(8rem, 16vw, 11rem);
+  height: auto;
+  justify-self: center;
+  filter: drop-shadow(0 10px 26px rgba(0, 0, 0, 0.55));
 }
 .alliance-sub {
   margin-top: 0.5rem;
