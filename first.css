@@ -329,7 +329,7 @@
 .mod-row {
   display: grid;
   gap: 1.75rem;
-  align-items: center;
+  align-items: stretch;
 }
 @media (min-width: 768px) {
   .mod-row { grid-template-columns: 1fr 1.1fr; gap: 3rem; }
@@ -341,6 +341,7 @@
   text-transform: uppercase;
   color: rgb(var(--first-orange));
 }
+.mod-row-text { align-self: center; }
 .mod-row-text h3 { margin-top: 0.5rem; font-size: clamp(1.3rem, 3vw, 1.75rem); }
 .mod-row-text p {
   margin-top: 0.85rem;
@@ -357,6 +358,16 @@
     0 26px 60px -18px rgb(var(--first-orange) / 0.55),
     0 12px 34px -12px rgb(var(--primary) / 0.45);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+/* En escritorio, la imagen iguala la altura del bloque de texto y se recorta */
+@media (min-width: 768px) {
+  .mod-row-media { position: relative; }
+  .mod-row-media img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 .mod-row-media img:hover {
   transform: translateY(-5px);
