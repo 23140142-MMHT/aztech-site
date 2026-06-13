@@ -110,7 +110,7 @@
 }
 
 /* ───────── Secciones ───────── */
-.env-section { max-width: 1100px; margin-inline: auto; padding: 4.5rem 1.5rem; }
+.env-section { max-width: 1100px; margin-inline: auto; padding: 3.25rem 1.5rem; }
 .env-eyebrow {
   font-size: 0.8rem;
   font-weight: 700;
@@ -131,6 +131,44 @@
 }
 .env-text strong { color: rgb(var(--foreground)); font-weight: 700; }
 .env-text .hl { color: rgb(var(--primary)); font-weight: 700; }
+
+/* ───────── Cifras destacadas (banda) ───────── */
+.env-stats-section { padding-top: 2.25rem; padding-bottom: 0.75rem; }
+.env-headline-stats {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) { .env-headline-stats { grid-template-columns: repeat(3, 1fr); } }
+.env-hstat {
+  border-radius: var(--radius);
+  border: 1px solid rgb(var(--border));
+  background: rgb(var(--surface) / 0.5);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+}
+.env-hstat--feature {
+  border-color: rgb(var(--primary) / 0.5);
+  background: rgb(var(--primary) / 0.08);
+}
+.env-hstat .num {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 7vw, 3.75rem);
+  line-height: 1;
+  background: linear-gradient(120deg, rgb(var(--accent)), rgb(var(--primary)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.env-hstat .lbl {
+  margin-top: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.82rem;
+  color: rgb(var(--foreground));
+}
 
 /* ───────── Intro "Por qué nace" (texto + imagen) ───────── */
 .env-why-intro {
@@ -318,11 +356,14 @@
 
 /* ───────── Proceso (fases) ───────── */
 .phase {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   border-radius: var(--radius);
   border: 1px solid rgb(var(--border));
   background: rgb(var(--surface) / 0.55);
-  padding: 1.75rem 2rem;
+  padding: 1.6rem 1.75rem;
+}
+@media (min-width: 820px) {
+  .phase { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 1.9rem; align-items: stretch; }
 }
 .phase-head {
   display: flex;
@@ -339,16 +380,89 @@
   color: rgb(var(--accent));
 }
 .phase-head h3 { font-size: 1.4rem; color: rgb(var(--primary)); }
-.phase p { margin-top: 1rem; color: rgb(var(--muted-foreground)); line-height: 1.7; }
-.phase p strong { color: rgb(var(--foreground)); }
-.phase .env-bigq {
-  margin-top: 1.25rem;
+.phase-sub {
+  margin-top: 0.25rem;
   font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: clamp(1.15rem, 2.6vw, 1.6rem);
-  line-height: 1.3;
-  color: rgb(var(--primary));
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: rgb(var(--accent));
 }
+.phase-body > p:not([class]) { margin-top: 0.9rem; color: rgb(var(--muted-foreground)); line-height: 1.7; }
+.phase-body > p:not([class]) strong { color: rgb(var(--foreground)); }
+
+/* Caja de fórmulas */
+.formula-box {
+  margin-top: 1.25rem;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  border: 1px solid rgb(var(--primary) / 0.35);
+  background: rgb(var(--surface-2) / 0.5);
+}
+.formula-title {
+  padding: 0.55rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(120deg, rgb(var(--primary)), rgb(34 110 48));
+}
+.formula-box ul { list-style: none; margin: 0; padding: 0.9rem 1.1rem; display: grid; gap: 0.55rem; }
+.formula-box li { font-family: var(--font-mono); font-size: 0.9rem; color: rgb(var(--foreground)); }
+
+/* Etiquetas (aliados) */
+.phase-tags {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: 1fr 1fr;
+}
+.phase-tag {
+  border-radius: 0.7rem;
+  border: 1px solid rgb(var(--primary) / 0.32);
+  background: rgb(var(--surface-2) / 0.45);
+  padding: 0.85rem 1rem;
+}
+.phase-tag h4 { color: rgb(var(--accent)); font-size: 0.95rem; }
+.phase-tag p { margin-top: 0.25rem; font-size: 0.85rem; color: rgb(var(--muted-foreground)); }
+
+/* Dato destacado */
+.phase-highlight {
+  margin-top: 1.25rem;
+  padding: 0.85rem 1.1rem;
+  border-left: 3px solid rgb(var(--accent));
+  border-radius: 0 0.6rem 0.6rem 0;
+  background: rgb(var(--primary) / 0.08);
+  color: rgb(var(--foreground));
+  font-weight: 600;
+  line-height: 1.55;
+}
+.phase-highlight strong { color: rgb(var(--primary)); }
+
+/* Media de cada fase + placeholders de foto */
+.phase-media {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+}
+@media (min-width: 820px) { .phase-media { margin-top: 0; } }
+.env-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  text-align: center;
+  min-height: 9.5rem;
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border: 2px dashed rgb(var(--primary) / 0.45);
+  background: rgb(var(--primary) / 0.06);
+  color: rgb(var(--muted-foreground));
+}
+.env-photo svg { width: 1.9rem; height: 1.9rem; color: rgb(var(--primary)); opacity: 0.8; }
+.env-photo span { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.03em; }
 
 /* Cifras destacadas */
 .env-stats {
@@ -382,6 +496,8 @@
 @media (min-width: 768px) { .goals-grid { grid-template-columns: repeat(2, 1fr); } }
 .goal-col h3 { font-size: 1.2rem; color: rgb(var(--primary)); }
 .goal-list { margin-top: 1rem; display: grid; gap: 0.75rem; }
+.goal-list--single { margin-top: 1.75rem; max-width: 800px; gap: 0.85rem; }
+.goal-list--single .goal-item p { font-size: 1rem; }
 .goal-item {
   display: flex;
   gap: 0.75rem;
@@ -399,7 +515,7 @@
   position: relative;
   overflow: hidden;
   margin-top: 1rem;
-  padding: 5.5rem 1.5rem;
+  padding: 4rem 1.5rem;
   text-align: center;
   background: linear-gradient(135deg, rgb(var(--primary)), rgb(34 110 48));
 }
