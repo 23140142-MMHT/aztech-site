@@ -1,8 +1,207 @@
 /* ════════════════════════════════════════════════════════════════════════
-   Tema del pilar FIRST — azul. Base compartida en styles.css.
-   Aquí irá la estética propia de esta sección (en construcción).
+   Pilar FIRST — paleta cálida (oro / naranja / rojo).
+   Hereda la base de styles.css y la re-tematiza aquí.
    ════════════════════════════════════════════════════════════════════════ */
 :root {
-  --primary: 37 99 235;   /* #2563eb azul FIRST */
-  --accent: 96 165 250;   /* #60a5fa azul claro */
+  --primary: 242 183 5;      /* #F2B705 oro/mostaza — títulos */
+  --accent: 255 213 79;      /* #FFD54F amarillo claro — acentos/líneas */
+  --background: 17 13 9;     /* casi negro cálido */
+  --surface: 30 22 13;       /* superficie cálida */
+  --surface-2: 44 31 17;
+  --border: 74 55 28;        /* borde cálido */
+  --foreground: 250 245 235;
+  --muted-foreground: 213 197 168;
+  --first-orange: 233 78 27; /* #E94E1B naranja fuerte */
+  --first-red: 217 58 30;    /* #D93A1E rojo anaranjado */
+  --first-sand: 232 207 160; /* #E8CFA0 beige/arena */
+}
+
+/* El logo del footer brilla en oro, no en morado */
+.footer-logo { filter: drop-shadow(0 0 22px rgba(242, 183, 5, 0.45)); }
+
+/* ───────── Hero ───────── */
+.first-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 9rem 1.5rem 5rem;
+  text-align: center;
+}
+.first-hero-inner { max-width: 56rem; margin-inline: auto; }
+.first-hero-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: radial-gradient(46rem 30rem at 50% 8%, rgb(var(--primary) / 0.18), transparent 62%);
+}
+.first-particles {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgb(var(--first-sand) / 0.55);
+  animation: float 9s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); opacity: 0.45; }
+  50% { transform: translateY(-16px); opacity: 0.9; }
+}
+
+.first-topline {
+  width: 4rem;
+  height: 4px;
+  margin: 0 auto 1.75rem;
+  border-radius: 9999px;
+  background: linear-gradient(to right, rgb(var(--primary)), rgb(var(--accent)));
+}
+.first-kicker {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgb(var(--accent));
+}
+.first-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(3.5rem, 13vw, 8rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: rgb(var(--primary));
+}
+.first-subtitle {
+  margin-top: 0.75rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  color: rgb(var(--first-sand));
+}
+.first-lead {
+  margin: 1.5rem auto 0;
+  max-width: 40rem;
+  font-size: 1.05rem;
+  color: rgb(var(--muted-foreground));
+}
+.first-hero-actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* ───────── Secciones ───────── */
+.first-section { max-width: 1100px; margin-inline: auto; padding: 4.5rem 1.5rem; }
+.first-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(var(--primary));
+}
+.first-section h2 {
+  margin-top: 0.75rem;
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
+}
+.first-section .first-text {
+  margin-top: 1.25rem;
+  max-width: 46rem;
+  color: rgb(var(--muted-foreground));
+  font-size: 1.05rem;
+}
+
+/* Cifras destacadas */
+.first-stats {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+@media (min-width: 640px) { .first-stats { grid-template-columns: repeat(4, 1fr); } }
+.first-stat {
+  border-radius: var(--radius);
+  border: 1px solid rgb(var(--border));
+  background: rgb(var(--surface) / 0.6);
+  padding: 1.25rem;
+  text-align: center;
+}
+.first-stat .num {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: rgb(var(--primary));
+}
+.first-stat .lbl { margin-top: 0.25rem; font-size: 0.8rem; color: rgb(var(--muted-foreground)); }
+
+/* Valores (tarjetas) */
+.first-values {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.25rem;
+}
+@media (min-width: 768px) { .first-values { grid-template-columns: repeat(3, 1fr); } }
+.value-card {
+  border-radius: var(--radius);
+  border: 1px solid rgb(var(--border));
+  background: rgb(var(--surface) / 0.6);
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+.value-card:hover {
+  border-color: rgb(var(--primary) / 0.6);
+  transform: translateY(-3px);
+}
+.value-card .value-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: rgb(var(--first-orange));
+}
+.value-card h3 { margin-top: 0.5rem; font-size: 1.25rem; }
+.value-card p { margin-top: 0.75rem; font-size: 0.95rem; color: rgb(var(--muted-foreground)); }
+
+/* ───────── Banda inferior (degradado naranja → rojo) ───────── */
+.first-band {
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+  padding: 5.5rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgb(var(--first-orange)), rgb(var(--first-red)));
+}
+.first-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(30rem 20rem at 80% 120%, rgb(var(--primary) / 0.35), transparent 60%);
+  pointer-events: none;
+}
+.first-band-inner { position: relative; max-width: 44rem; margin-inline: auto; }
+.first-band h2 {
+  color: #fff;
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  line-height: 1.1;
+}
+.first-band p {
+  margin: 1rem auto 0;
+  max-width: 38rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+.first-band .btn-light {
+  margin-top: 1.75rem;
+  background: #fff;
+  color: rgb(var(--first-red));
+  border: none;
+}
+.first-band .btn-light:hover {
+  filter: brightness(1.02);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
 }
