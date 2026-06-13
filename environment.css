@@ -458,9 +458,13 @@
   box-shadow: 0 12px 28px -16px rgb(var(--primary) / 0.5);
 }
 .env-shot img { display: block; width: 100%; height: auto; }
-/* El QR conserva su fondo oscuro propio y un poco de aire */
+/* Fila superior pareja: logo + QR en cuadros cuadrados (contain) */
+.env-shot--logo, .env-shot--qr { display: flex; align-items: center; justify-content: center; }
+.env-shot--logo img, .env-shot--qr img { aspect-ratio: 1 / 1; height: auto; object-fit: contain; padding: 0.7rem; }
+.env-shot--logo { background: rgb(var(--surface-2) / 0.6); }
 .env-shot--qr { background: #0a0f1e; }
-.env-shot--qr img { padding: 0.5rem; }
+/* Captura a lo ancho (ocupa las 2 columnas) */
+.env-shot--wide { grid-column: 1 / -1; }
 
 /* Cifras destacadas */
 .env-stats {
