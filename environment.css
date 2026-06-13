@@ -224,6 +224,37 @@
 .how-card h3 { position: relative; margin-top: 0.3rem; font-size: 1.2rem; }
 .how-card p { position: relative; margin-top: 0.6rem; font-size: 0.93rem; color: rgba(255, 255, 255, 0.92); line-height: 1.6; }
 
+/* ───────── Blue Switch lockup ───────── */
+.bs-lockup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+.bs-logo {
+  width: clamp(3rem, 8vw, 4.25rem);
+  height: auto;
+  filter: drop-shadow(0 8px 20px rgba(59, 94, 160, 0.45));
+}
+.bs-lockup-text { display: flex; flex-direction: column; line-height: 1.15; }
+.bs-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  background: linear-gradient(120deg, #6f9bd8, #2e4f8f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.bs-tagline {
+  margin-top: 0.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgb(var(--muted-foreground));
+}
+
 /* ───────── Proceso (fases) ───────── */
 .phase {
   margin-top: 2rem;
