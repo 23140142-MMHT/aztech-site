@@ -352,23 +352,18 @@
 .mod-row-media img {
   display: block;
   width: 100%;
+  aspect-ratio: 1 / 1;
   height: auto;
+  object-fit: cover;
+  object-position: center;
   border-radius: var(--radius);
   box-shadow:
     0 26px 60px -18px rgb(var(--first-orange) / 0.55),
     0 12px 34px -12px rgb(var(--primary) / 0.45);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
-/* En escritorio, la imagen iguala la altura del bloque de texto y se recorta */
-@media (min-width: 768px) {
-  .mod-row-media { position: relative; }
-  .mod-row-media img {
-    position: absolute;
-    inset: 0;
-    height: 100%;
-    object-fit: cover;
-  }
-}
+/* La feria tiene las caras en la parte superior: anclamos el encuadre arriba */
+.mod-row-media img.pos-top { object-position: center 22%; }
 .mod-row-media img:hover {
   transform: translateY(-5px);
   box-shadow:
