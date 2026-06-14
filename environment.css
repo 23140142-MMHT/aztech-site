@@ -364,12 +364,17 @@
 }
 @media (min-width: 820px) {
   .phase { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 1.9rem; align-items: start; }
-  /* Fase a ancho completo: texto arriba, foto banner abajo */
-  .phase--full { display: block; }
 }
-.phase--full .phase-media { margin-top: 1.5rem; }
-.env-shot--banner img { aspect-ratio: 16 / 6; object-fit: cover; }
-@media (max-width: 620px) { .env-shot--banner img { aspect-ratio: 16 / 9; } }
+
+/* Fase con foto a lo alto, pegada al borde derecho de la card (se recorta) */
+.env-shot--fill { margin: 0; border: none; border-radius: 0.7rem; overflow: hidden; box-shadow: none; background: none; }
+.env-shot--fill img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+@media (min-width: 820px) {
+  .phase--media-right { padding: 0; overflow: hidden; align-items: stretch; }
+  .phase--media-right .phase-body { padding: 1.7rem 0 1.7rem 1.9rem; }
+  .phase--media-right .env-shot--fill { border-radius: 0; height: 100%; }
+  .phase--media-right .env-shot--fill img { height: 100%; aspect-ratio: auto; }
+}
 .phase-head {
   display: flex;
   align-items: baseline;
