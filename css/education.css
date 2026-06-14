@@ -407,6 +407,8 @@
   background: rgb(255 255 255 / 0.94);
 }
 .collab-logo img { max-height: 3rem; max-width: 100%; width: auto; object-fit: contain; }
+/* Para logos blancos (FARO, FES): fondo oscuro en vez de blanco */
+.collab-logo.is-dark { background: #0a0f1f; border: 1px solid rgb(var(--border)); }
 .collab-logo.is-empty {
   background: transparent;
   border: 1px dashed rgb(var(--border));
