@@ -476,6 +476,18 @@
 /* Captura a lo ancho (ocupa las 2 columnas) */
 .env-shot--wide { grid-column: 1 / -1; }
 
+/* Fase 1: media en columna que llena toda la altura del texto (sin huecos) */
+.phase-media--fillcol { display: flex; flex-direction: column; gap: 0.85rem; }
+.env-shot--grow img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
+@media (min-width: 820px) {
+  .phase--media-fill { align-items: stretch; }
+  .phase-media--fillcol { height: 100%; }
+  .env-shot--grow { flex: 1 1 auto; min-height: 0; }
+  .env-shot--grow img { height: 100%; aspect-ratio: auto; }
+  .phase-media--fillcol .env-shot--qr { flex: 0 0 auto; }
+  .phase-media--fillcol .env-shot--qr img { width: auto; height: 8.5rem; aspect-ratio: 1 / 1; }
+}
+
 /* Cifras destacadas */
 .env-stats {
   margin-top: 2.5rem;
