@@ -375,15 +375,36 @@
       FIRST. Buscamos relaciones recíprocas y de largo plazo.
     </p>
     <div class="sponsors-box">
+      <!--
+        ╔═══════════════════════════════════════════════════════════════════╗
+        ║  CÓMO EDITAR LA INFO DE CADA PATROCINADOR (la tarjeta del hover)   ║
+        ║                                                                   ║
+        ║  Cada logo es un <div class="sponsor"> con 4 cosas editables:     ║
+        ║    1. style="--sp:#F2A900"  → COLOR de la barra y el sector       ║
+        ║    2. <img src=".../xxx.png" alt="Nombre"> → LOGO (en /sponsors)  ║
+        ║    3. <span class="sp-cat">  → SECTOR (texto corto)               ║
+        ║    4. <h4 class="sp-name">   → NOMBRE de la empresa               ║
+        ║    5. <p class="sp-desc">    → DESCRIPCIÓN (a qué se dedica)       ║
+        ║                                                                   ║
+        ║  El texto que ves entre las etiquetas (>aquí<) es el ESPAÑOL.     ║
+        ║  data-en="..."  = versión en inglés                              ║
+        ║  data-fr="..."  = versión en francés                             ║
+        ║  Edita los 3 si quieres que cambie en los 3 idiomas; si solo te   ║
+        ║  importa el español, edita el texto entre >  < y listo.          ║
+        ╚═══════════════════════════════════════════════════════════════════╝
+      -->
       <div class="sponsors-grid">
-        <div class="sponsor" tabindex="0" style="--sp:#F2A900">
-          <img src="sponsors/grupo-salinas.png" alt="Grupo Salinas" />
+        <!-- ░░ PATROCINADOR 1 ░░ -->
+        <div class="sponsor" tabindex="0" style="--sp:#F2A900"><!-- ← COLOR de la marca -->
+          <img src="sponsors/grupo-salinas.png" alt="Grupo Salinas" /><!-- ← LOGO -->
           <div class="sponsor-pop">
-            <span class="sp-cat" data-en="Conglomerate" data-fr="Conglomérat">Conglomerado</span>
-            <h4 class="sp-name">Grupo Salinas</h4>
+            <span class="sp-cat" data-en="Conglomerate" data-fr="Conglomérat">Conglomerado</span><!-- ← SECTOR -->
+            <h4 class="sp-name">Grupo Salinas</h4><!-- ← NOMBRE -->
+            <!-- ↓ DESCRIPCIÓN (español entre > <, inglés en data-en, francés en data-fr) -->
             <p class="sp-desc" data-en="Mexican conglomerate that brings together TV Azteca, Elektra and Banco Azteca, among other media, retail and finance companies." data-fr="Conglomérat mexicain réunissant TV Azteca, Elektra et Banco Azteca, parmi d'autres entreprises de médias, commerce et finance.">Conglomerado mexicano que reúne a TV Azteca, Elektra y Banco Azteca, entre otras empresas de medios, comercio y finanzas.</p>
           </div>
         </div>
+        <!-- ░░ PATROCINADOR 2 ░░ -->
         <div class="sponsor" tabindex="0" style="--sp:#2D9CDB">
           <img src="sponsors/fundacion-azteca.png" alt="Fundación Azteca" />
           <div class="sponsor-pop">
@@ -392,6 +413,7 @@
             <p class="sp-desc" data-en="Grupo Salinas's social arm (1997): social, environmental and educational projects such as Plantel Azteca and Limpiemos México." data-fr="Branche sociale de Grupo Salinas (1997) : projets sociaux, environnementaux et éducatifs comme Plantel Azteca et Limpiemos México.">Brazo social de Grupo Salinas (1997): proyectos sociales, ambientales y educativos como Plantel Azteca y Limpiemos México.</p>
           </div>
         </div>
+        <!-- ░░ PATROCINADOR 3 ░░ -->
         <div class="sponsor" tabindex="0" style="--sp:#9B51E0">
           <img src="sponsors/plantel-azteca.png" alt="Plantel Azteca" />
           <div class="sponsor-pop">
@@ -400,6 +422,7 @@
             <p class="sp-desc" data-en="Academic-excellence school for low-income youth; it has granted more than 22,000 scholarships." data-fr="École d'excellence pour les jeunes à faibles revenus ; plus de 22 000 bourses accordées.">Escuela de excelencia para jóvenes de escasos recursos; ha otorgado más de 22,000 becas.</p>
           </div>
         </div>
+        <!-- ░░ PATROCINADOR 4 ░░ -->
         <div class="sponsor" tabindex="0" style="--sp:#E2001A">
           <img src="sponsors/grupo-elektra.png" alt="Grupo Elektra" />
           <div class="sponsor-pop">
@@ -408,6 +431,7 @@
             <p class="sp-desc" data-en="Chain with thousands of stores across Latin America: electronics, appliances, motorcycles and financial services." data-fr="Chaîne aux milliers de magasins en Amérique latine : électronique, électroménager, motos et services financiers.">Cadena con miles de tiendas en América Latina: electrónica, electrodomésticos, motos y servicios financieros.</p>
           </div>
         </div>
+        <!-- ░░ PATROCINADOR 5 ░░ -->
         <div class="sponsor" tabindex="0" style="--sp:#00A14B">
           <img src="sponsors/banco-azteca.png" alt="Banco Azteca" />
           <div class="sponsor-pop">
@@ -416,6 +440,7 @@
             <p class="sp-desc" data-en="Bank that brings financial services to communities with little or no access to traditional banking." data-fr="Banque qui apporte des services financiers aux communautés ayant peu ou pas d'accès à la banque traditionnelle.">Banco que lleva servicios financieros a comunidades con poco o nulo acceso a la banca tradicional.</p>
           </div>
         </div>
+        <!-- ░░ PATROCINADOR 6 ░░ -->
         <div class="sponsor" tabindex="0" style="--sp:#0098DA">
           <img src="sponsors/italika.png" alt="Italika" />
           <div class="sponsor-pop">
@@ -424,6 +449,7 @@
             <p class="sp-desc" data-en="Mexican motorcycle brand, the country's sales leader, with its own service and parts network." data-fr="Marque mexicaine de motos, leader des ventes au pays, avec son propre réseau de service et de pièces.">Marca mexicana de motocicletas, líder en ventas en el país, con red propia de servicio y refacciones.</p>
           </div>
         </div>
+        <!-- ░░ PATROCINADOR 7 ░░ -->
         <div class="sponsor" tabindex="0" style="--sp:#18B6D8">
           <img src="sponsors/grupo-tierton.png" alt="Grupo Terton" />
           <div class="sponsor-pop">
