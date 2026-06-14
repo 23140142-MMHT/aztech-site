@@ -844,41 +844,60 @@ body.drawer-open .drawer { transform: translateX(0); }
 .sponsor:focus-visible img { transform: scale(1.05); }
 @media (min-width: 640px) { .sponsor img { height: 7rem; } }
 
-/* Tooltip: a qué se dedica cada patrocinador */
-.sponsor-tip {
+/* Tarjeta al pasar el cursor: a qué se dedica cada patrocinador */
+.sponsor-pop {
   position: absolute;
-  bottom: calc(100% + 0.7rem);
+  bottom: calc(100% + 0.75rem);
   left: 50%;
-  transform: translateX(-50%) translateY(5px);
-  width: max-content;
-  max-width: 13rem;
-  padding: 0.5rem 0.7rem;
-  border-radius: 0.55rem;
+  transform: translateX(-50%) scale(0.95);
+  transform-origin: bottom center;
+  width: 16rem;
+  max-width: 78vw;
+  padding: 0.85rem 0.95rem 0.95rem;
+  border-radius: 0.7rem;
   border: 1px solid rgb(var(--border));
-  background: rgb(var(--surface-2));
-  color: rgb(var(--foreground));
-  font-size: 0.78rem;
-  line-height: 1.35;
-  text-align: center;
+  border-top: 3px solid var(--sp, rgb(var(--accent)));
+  background: rgb(var(--surface));
+  text-align: left;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
-  z-index: 5;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.6);
+  z-index: 6;
 }
-.sponsor-tip::after {
+.sponsor-pop::after {
   content: "";
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  border: 6px solid transparent;
-  border-top-color: rgb(var(--surface-2));
+  border: 7px solid transparent;
+  border-top-color: rgb(var(--surface));
 }
-.sponsor:hover .sponsor-tip,
-.sponsor:focus-visible .sponsor-tip {
+.sponsor:hover .sponsor-pop,
+.sponsor:focus-visible .sponsor-pop {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  transform: translateX(-50%) scale(1);
+}
+.sp-cat {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sp, rgb(var(--accent)));
+}
+.sp-name {
+  margin-top: 0.2rem;
+  font-size: 0.98rem;
+  color: rgb(var(--foreground));
+}
+.sp-desc {
+  margin-top: 0.4rem;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: rgb(var(--muted-foreground));
 }
 
 /* ───────── Footer ───────── */
