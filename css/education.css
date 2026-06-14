@@ -305,6 +305,30 @@
   border-color: rgb(var(--edu-blue) / 0.7);
   box-shadow: 0 18px 40px -20px rgb(var(--edu-blue) / 0.8);
 }
+/* Espacio para el logo de la institución (sube el png a images/collab/) */
+.collab-logo {
+  display: grid;
+  place-items: center;
+  height: 4.25rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.7rem;
+  background: rgb(255 255 255 / 0.94);
+}
+.collab-logo img { max-height: 3rem; max-width: 100%; width: auto; object-fit: contain; }
+.collab-logo.is-empty {
+  background: transparent;
+  border: 1px dashed rgb(var(--border));
+}
+.collab-logo.is-empty::after {
+  content: "Logo";
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(var(--muted-foreground) / 0.7);
+}
+
 .collab-tag {
   font-family: var(--font-mono);
   font-size: 0.72rem;
