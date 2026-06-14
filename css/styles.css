@@ -978,6 +978,41 @@ body.drawer-open .drawer { transform: translateX(0); }
 
 /* ───────── Footer ───────── */
 .site-footer { border-top: 1px solid rgb(var(--border)); }
+
+/* ───────── Footer compacto (unificado en todas las páginas) ───────── */
+.footer-mini {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  padding-block: 1.75rem;
+}
+.footer-mini-brand { display: flex; align-items: center; gap: 0.7rem; }
+.footer-mini-brand .footer-logo { height: 2.1rem; width: auto; }
+.footer-mini-brand .footer-wordmark { height: 1.3rem; width: auto; }
+.footer-mini-social { display: flex; gap: 0.5rem; }
+.footer-mini-social a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid rgb(var(--border));
+  color: rgb(var(--muted-foreground));
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.footer-mini-social a:hover { color: rgb(var(--accent)); border-color: rgb(var(--accent)); }
+.footer-mini-credit {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(var(--border));
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgb(var(--muted-foreground));
+}
+.footer-mini-credit .heart { color: rgb(var(--accent)); }
+
 .footer-grid { display: grid; gap: 2.5rem; }
 @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
 .footer-brand {
