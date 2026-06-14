@@ -7,7 +7,7 @@
 /* Conthrax SemiBold — fuente de display (titulares) del sitio */
 @font-face {
   font-family: "Conthrax";
-  src: url("fonts/Conthrax-SemiBold.otf") format("opentype");
+  src: url("../fonts/Conthrax-SemiBold.otf") format("opentype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
