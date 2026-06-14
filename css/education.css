@@ -242,6 +242,20 @@
 }
 .edu-chip:hover { border-color: rgb(var(--edu-blue) / 0.7); background: rgb(var(--surface) / 0.9); }
 
+/* ───────── Encabezado embajadores con Aztlo ───────── */
+.amb-head { display: grid; gap: 1.5rem; align-items: center; }
+@media (min-width: 820px) { .amb-head { grid-template-columns: 1.45fr 0.55fr; gap: 2.5rem; } }
+.amb-figure { display: flex; justify-content: center; }
+.amb-figure img {
+  width: clamp(11rem, 26vw, 15rem);
+  height: auto;
+  filter: drop-shadow(0 18px 38px rgba(0, 0, 0, 0.55));
+}
+@media (max-width: 819px) {
+  .amb-figure { order: -1; }
+  .amb-figure img { width: clamp(9rem, 42vw, 12rem); }
+}
+
 /* ───────── Razones (embajadores FIRST) — cards con número fantasma ───────── */
 .amb-grid {
   margin-top: 2.5rem;
