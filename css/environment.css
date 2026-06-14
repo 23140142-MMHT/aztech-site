@@ -44,16 +44,16 @@
   gap: 0.7rem;
   margin-bottom: 1.4rem;
   font-family: var(--font-mono);
-  font-size: 0.76rem;
-  letter-spacing: 0.26em;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgb(var(--accent));
+  color: rgb(var(--muted-foreground));
 }
 .env-kicker::before {
   content: "";
-  width: 2rem;
-  height: 2px;
-  background: rgb(var(--accent));
+  width: 1.75rem;
+  height: 1px;
+  background: rgb(var(--accent) / 0.7);
 }
 .env-title {
   font-size: clamp(2.6rem, 7vw, 4.5rem);
@@ -95,7 +95,7 @@
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgb(var(--primary) / 0.3), transparent 66%);
+  background: radial-gradient(circle, rgb(var(--primary) / 0.12), transparent 66%);
   z-index: -1;
 }
 .env-hero-figure img {
@@ -112,11 +112,21 @@
 /* ───────── Secciones ───────── */
 .env-section { max-width: 1100px; margin-inline: auto; padding: 3.25rem 1.5rem; }
 .env-eyebrow {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgb(var(--primary));
+}
+.env-eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 1px;
+  background: rgb(var(--primary) / 0.6);
 }
 .env-section h2 {
   margin-top: 0.75rem;
@@ -297,7 +307,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(18rem 12rem at 110% -10%, rgb(var(--accent) / 0.4), transparent 60%);
+  background: radial-gradient(18rem 12rem at 110% -10%, rgb(var(--accent) / 0.14), transparent 60%);
   pointer-events: none;
 }
 .how-card .how-k {
@@ -349,7 +359,7 @@
   margin-top: 0.2rem;
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgb(var(--muted-foreground));
 }
@@ -385,7 +395,7 @@
   font-family: var(--font-mono);
   font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgb(var(--accent));
 }
@@ -547,7 +557,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(30rem 20rem at 80% 120%, rgb(var(--accent) / 0.4), transparent 60%);
+  background: radial-gradient(30rem 20rem at 80% 120%, rgb(var(--accent) / 0.16), transparent 60%);
   pointer-events: none;
 }
 .env-band-inner { position: relative; max-width: 44rem; margin-inline: auto; }
