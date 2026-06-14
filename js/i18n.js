@@ -35,8 +35,8 @@
   }
 
   function init() {
-    var saved = "es";
-    try { saved = localStorage.getItem(KEY) || "es"; } catch (e) {}
+    var saved = "en";
+    try { saved = localStorage.getItem(KEY) || "en"; } catch (e) {}
 
     document.querySelectorAll(".lang-btn").forEach(function (b) {
       b.addEventListener("click", function () {
