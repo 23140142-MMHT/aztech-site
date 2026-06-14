@@ -826,10 +826,12 @@ body.drawer-open .drawer { transform: translateX(0); }
   gap: 1.5rem 2rem;
 }
 .sponsor {
+  position: relative;
   display: flex;
   width: calc(50% - 2rem);
   align-items: center;
   justify-content: center;
+  outline: none;
 }
 @media (min-width: 640px) { .sponsor { width: calc(25% - 2rem); } }
 .sponsor img {
@@ -838,8 +840,46 @@ body.drawer-open .drawer { transform: translateX(0); }
   object-fit: contain;
   transition: transform 0.2s ease;
 }
-.sponsor img:hover { transform: scale(1.05); }
+.sponsor:hover img,
+.sponsor:focus-visible img { transform: scale(1.05); }
 @media (min-width: 640px) { .sponsor img { height: 7rem; } }
+
+/* Tooltip: a qué se dedica cada patrocinador */
+.sponsor-tip {
+  position: absolute;
+  bottom: calc(100% + 0.7rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  width: max-content;
+  max-width: 13rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.55rem;
+  border: 1px solid rgb(var(--border));
+  background: rgb(var(--surface-2));
+  color: rgb(var(--foreground));
+  font-size: 0.78rem;
+  line-height: 1.35;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+  z-index: 5;
+}
+.sponsor-tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgb(var(--surface-2));
+}
+.sponsor:hover .sponsor-tip,
+.sponsor:focus-visible .sponsor-tip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
 
 /* ───────── Footer ───────── */
 .site-footer { border-top: 1px solid rgb(var(--border)); }
