@@ -24,6 +24,17 @@
     });
   }
 
+  // Imagen del Aztech Warrior Cycle: si aún no se sube, deja un aviso limpio.
+  var cycleImg = document.querySelector(".cycle-figure img");
+  if (cycleImg) {
+    cycleImg.addEventListener("error", function () {
+      var hint = document.createElement("span");
+      hint.className = "cycle-figure-hint";
+      hint.textContent = "Imagen del ciclo · brand/warrior-cycle.png";
+      cycleImg.replaceWith(hint);
+    });
+  }
+
   // Menú desplegable "Our Pillars" (clic para abrir/cerrar; hover ya en CSS).
   var dropdowns = document.querySelectorAll(".nav-dropdown");
 
