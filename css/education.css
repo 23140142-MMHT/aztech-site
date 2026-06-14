@@ -385,6 +385,107 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* ───────── Línea de tiempo horizontal con cards desplegables ───────── */
+.edu-track {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+}
+.track-item {
+  border: 1px solid rgb(var(--border));
+  border-top: 3px solid rgb(var(--edu-sky));
+  border-radius: var(--radius);
+  background: rgb(var(--surface) / 0.6);
+  padding: 1.05rem 1.1rem;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+.track-item:hover { transform: translateY(-3px); border-top-color: rgb(var(--edu-cyan)); }
+.track-item[open] { background: rgb(var(--surface) / 0.92); border-color: rgb(var(--edu-blue) / 0.7); }
+.track-item > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.track-item > summary::-webkit-details-marker { display: none; }
+.track-year {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: rgb(var(--edu-sky));
+}
+.track-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: rgb(var(--foreground));
+}
+.track-title::after {
+  content: "+";
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  line-height: 1;
+  color: rgb(var(--edu-cyan));
+}
+.track-item[open] .track-title::after { content: "\2013"; }
+.track-item p {
+  margin-top: 0.75rem;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: rgb(var(--muted-foreground));
+}
+@media (max-width: 860px) { .edu-track { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 460px) { .edu-track { grid-template-columns: 1fr; } }
+
+/* ───────── Impacto en cards (cifra grande) ───────── */
+.impact-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 900px) { .impact-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 460px) { .impact-grid { grid-template-columns: 1fr; } }
+.impact-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid rgb(var(--border));
+  background: rgb(var(--surface) / 0.6);
+  padding: 1.4rem 1.25rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.impact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(12rem 8rem at 110% -10%, rgb(var(--edu-blue) / 0.18), transparent 60%);
+  pointer-events: none;
+}
+.impact-card:hover {
+  transform: translateY(-4px);
+  border-color: rgb(var(--edu-blue) / 0.7);
+  box-shadow: 0 16px 36px -22px rgb(var(--edu-blue) / 0.9);
+}
+.impact-card .big {
+  position: relative;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 2.7rem);
+  line-height: 1;
+  color: rgb(var(--edu-sky));
+}
+.impact-card .nm { position: relative; margin-top: 0.55rem; font-weight: 700; font-size: 0.92rem; color: rgb(var(--foreground)); }
+.impact-card .dt { position: relative; margin-top: 0.4rem; font-size: 0.81rem; line-height: 1.45; color: rgb(var(--muted-foreground)); }
+.impact-card .dt b { color: rgb(var(--edu-sky)); font-weight: 700; }
+
 .impact-list {
   margin-top: 1.75rem;
   display: grid;
