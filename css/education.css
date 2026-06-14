@@ -37,7 +37,7 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(32rem 24rem at 82% 15%, rgb(var(--edu-blue) / 0.2), transparent 62%);
+  background: radial-gradient(32rem 24rem at 85% 10%, rgb(var(--edu-blue) / 0.10), transparent 62%);
 }
 .edu-hero-inner {
   max-width: 1100px;
@@ -57,16 +57,16 @@
   gap: 0.7rem;
   margin-bottom: 1.4rem;
   font-family: var(--font-mono);
-  font-size: 0.76rem;
-  letter-spacing: 0.26em;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgb(var(--accent));
+  color: rgb(var(--muted-foreground));
 }
 .edu-kicker::before {
   content: "";
-  width: 2rem;
-  height: 2px;
-  background: rgb(var(--accent));
+  width: 1.75rem;
+  height: 1px;
+  background: rgb(var(--accent) / 0.7);
 }
 .edu-title {
   font-size: clamp(2.8rem, 8vw, 5rem);
@@ -120,11 +120,21 @@
 }
 .edu-section--surface > .edu-inner { max-width: 1100px; margin-inline: auto; }
 .edu-eyebrow {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgb(var(--accent));
+}
+.edu-eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 1px;
+  background: rgb(var(--accent) / 0.6);
 }
 .edu-section h2 {
   margin-top: 0.75rem;
@@ -149,35 +159,26 @@
 .pill {
   position: relative;
   display: flex;
-  align-items: center;
-  gap: 1.1rem;
-  padding: 1.15rem 1.6rem;
-  border-radius: 9999px;
-  color: #fff;
-  background: linear-gradient(100deg, rgb(var(--edu-deep)), rgb(var(--edu-blue)) 60%, rgb(var(--edu-bright)));
-  box-shadow: 0 14px 30px -18px rgb(var(--edu-blue) / 0.9);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.05rem 1.35rem;
+  border-radius: var(--radius);
+  border: 1px solid rgb(var(--border));
+  border-left: 3px solid rgb(var(--edu-sky));
+  background: rgb(var(--surface) / 0.5);
+  transition: border-left-color 0.2s ease, background 0.2s ease;
 }
-.pill:hover { transform: translateX(6px); box-shadow: 0 16px 34px -16px rgb(var(--edu-blue)); }
+.pill:hover { border-left-color: rgb(var(--edu-blue)); background: rgb(var(--surface) / 0.8); }
 .pill-n {
-  display: grid;
-  place-items: center;
   flex-shrink: 0;
-  height: 2.4rem;
-  width: 2.4rem;
-  border-radius: 9999px;
-  background: rgb(var(--edu-cyan));
-  color: #08203a;
+  min-width: 1.5rem;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1rem;
-  box-shadow: 0 0 14px 0 rgb(var(--edu-cyan) / 0.6);
+  font-size: 0.95rem;
+  color: rgb(var(--edu-sky));
 }
-.pill p { font-size: 0.98rem; line-height: 1.45; }
-.pill p strong { color: #fff; font-weight: 700; }
-@media (max-width: 560px) {
-  .pill { border-radius: var(--radius); align-items: flex-start; }
-}
+.pill p { font-size: 0.97rem; line-height: 1.55; color: rgb(var(--muted-foreground)); }
+.pill p strong { color: rgb(var(--foreground)); font-weight: 700; }
 
 /* ───────── Línea de tiempo de iniciativas (HOW) ───────── */
 .edu-feature {
@@ -196,14 +197,14 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(22rem 14rem at 100% 0%, rgb(var(--edu-cyan) / 0.22), transparent 60%);
+  background: radial-gradient(22rem 14rem at 100% 0%, rgb(var(--edu-cyan) / 0.12), transparent 60%);
   pointer-events: none;
 }
 .edu-feature .ft-tag {
   position: relative;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgb(var(--edu-cyan));
 }
@@ -297,7 +298,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(14rem 10rem at 100% 0%, rgb(var(--edu-cyan) / 0.28), transparent 60%);
+  background: radial-gradient(14rem 10rem at 100% 0%, rgb(var(--edu-cyan) / 0.16), transparent 60%);
   pointer-events: none;
 }
 .edu-stat .num {
@@ -451,8 +452,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(30rem 20rem at 80% 120%, rgb(var(--edu-cyan) / 0.3), transparent 60%),
-    radial-gradient(26rem 18rem at 10% -10%, rgb(var(--edu-sky) / 0.3), transparent 60%);
+    radial-gradient(30rem 20rem at 80% 120%, rgb(var(--edu-cyan) / 0.18), transparent 60%),
+    radial-gradient(26rem 18rem at 10% -10%, rgb(var(--edu-sky) / 0.18), transparent 60%);
   pointer-events: none;
 }
 .edu-band-inner { position: relative; max-width: 44rem; margin-inline: auto; }
