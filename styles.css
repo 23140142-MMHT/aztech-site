@@ -960,13 +960,14 @@ body.drawer-open .drawer { transform: translateX(0); }
   margin: 0;
   display: grid;
   place-items: center;
-  min-height: 340px;
-  padding: 1rem;
-  border-radius: 1rem;
-  border: 1px dashed rgb(var(--border));
-  background: rgb(var(--surface) / 0.25);
 }
-.cycle-figure img { width: 100%; max-width: 30rem; height: auto; }
+.cycle-figure img {
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
+  border: none;
+  box-shadow: none;
+}
 .cycle-figure-hint {
   font-family: var(--font-mono);
   font-size: 0.8rem;
